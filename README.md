@@ -1,21 +1,19 @@
 # UTR-CODE
-#  RiboDecode: Deep Generative Optimization of mRNA Codon Sequences for Enhanced mRNA Translation and Therapeutic Efficacy.
 
 ## Overview
-RiboDecode is a deep learning-based tool designed to optimize mRNA codon sequences to enhance mRNA translation and therapeutic efficacy. This repository provides the necessary code and resources to predict and optimize mRNA translation levels in various cellular environments.
+Translation is a fundamental biological process that directly influences protein abundance, yet the mechanisms by which mRNA sequences determine translational regulation remain incompletely understood, especially the 5’ untranslated regions (5' UTRs) play an essential role in translation regulation. Here, we generated 1,586 paired RNA-seq and Ribo-seq datasets from six species and developed a deep learning model UTR-CODE, to predict mRNA translation efficiency (TE). UTR-CODE demonstrates strong cross-species generalizability and outperforms existing tools across diverse platforms. 
 
 ## Environment
 To set up the environment, ensure you have the following dependencies installed:
 
-- Python=3.8.19
-- torch=2.0.1
+- Python=3.8.20
+- torch=2.4.1
 - CUDA=12.1  
-- viennarna=2.6.4 
-- numpy=1.24.4  
-- pandas=2.0.3
-- p-tqdm=1.4.0 
-- matplotlib=3.7.5 
-- seaborn=0.13.2
+- numpy=1.24.4
+- pandas=2.0.3  
+- scipy=1.10.1
+- tqdm=4.67.1 
+- pyarrow=17.0.0 
 
 The required dependency packages will be automatically downloaded the first time you run the program.
 
@@ -24,16 +22,16 @@ The required dependency packages will be automatically downloaded the first time
 You can create a new conda environment using the following command:
 
 ```
-conda create -n ribodecode python=3.8
+conda create -n UTR-CODE python=3.8
 ```
 
 Activate the environment:
 
 ```
-conda activate ribodecode
+conda activate UTR-CODE
 ```
 
-### **TranslationModel**
+### **UTRCODEModel**
 
 Download the necessary **.whl** file from [here](https://drive.google.com/file/d/19Yyl8uUbjQn0TAA4E52ZUGBd_pb_RyW8/view?usp=sharing) and install it using:
 
@@ -45,24 +43,4 @@ To perform local testing, use the following command:
 
 ```
 pred-translation --cds ATGGACGGGTAG --env HEK293T
-```
-
-* The maximum length of the coding sequence (**cds**) should not exceed 4500nt.
-
-* Pre-configured cellular environments (**env**): **HEK293T**, **A549**, and **HeLa**. 
-
-For custom cellular environments, use:
-
-```
-pred-translation --cds ATGGACGGGTAG --csv env_file.csv
-```
-
-Here, '**csv**' specifies the custom cellular environment file. We provide a standard template file, **env_file.csv**, with the following format:
-The first column contains human gene IDs, which must remain unchanged.
-The second column lists the corresponding mRNA RPKM values, provided by the user. Missing values can be replaced with 0.
-
-If you have any questions about the TranslationModel, you can get help information by using the following command:
-
-```
-pred-translation --help
 ```
