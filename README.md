@@ -31,16 +31,30 @@ Activate the environment:
 conda activate UTR-CODE
 ```
 
-### **UTRCODEModel**
+### **UTR-CODE Model**
 
 Download the necessary **.whl** file from [here](https://drive.google.com/file/d/19Yyl8uUbjQn0TAA4E52ZUGBd_pb_RyW8/view?usp=sharing) and install it using:
 
 ```
-pip install TranslationModel-1.1.0-py3-none-any.whl
+pip install utr_code-1.0.0-py3-none-any.whl
 ```
 
-To perform local testing, use the following command:
+To perform local training, use the following command:
 
 ```
-pred-translation --cds ATGGACGGGTAG --env HEK293T
+utr-code-train --epochs 10
 ```
+Here, epochs represents the number of training rounds, the default value is 10.
+
+After the training is completed, the training weights will be saved in the current directory.
+
+## Version History
+
+- **1.0 (2025-9-29)**
+
+  Updata readme.md.
+  
+## Contact
+For any questions, issues, or further assistance, please feel free to contact us via:
+[@HeXin](https://github.com/TcbfGroup)
+
