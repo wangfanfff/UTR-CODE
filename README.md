@@ -33,7 +33,7 @@ conda activate UTR-CODE
 
 ### **UTR-CODE Model**
 
-Download the necessary **.whl** file from [here](https://drive.google.com/file/d/19Yyl8uUbjQn0TAA4E52ZUGBd_pb_RyW8/view?usp=sharing) and install it using:
+Download the necessary **.whl** file from [here](https://drive.google.com/file/d/1rARFLNtXpn1AyJMzs6J8aohAJeztSq_H/view?usp=sharing) and install it using:
 
 ```
 pip install utr_code-1.0.0-py3-none-any.whl
